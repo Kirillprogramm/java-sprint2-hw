@@ -52,7 +52,7 @@ public class Main {
     }
 
     public static void printMenu() {
-        System.out.println("\nЧто вы хотите сделать? ");
+        System.out.println("Что вы хотите сделать? ");
         System.out.println("1 - Считать все месячные отчёты");
         System.out.println("2 - Считать годовой отчёт");
         System.out.println("3 - Сверить отчёты");
