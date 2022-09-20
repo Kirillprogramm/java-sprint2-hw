@@ -1,26 +1,19 @@
 import java.util.ArrayList;
-import java.util.TreeMap;
-/**
- * Класс для Сверки отчётов
- */
+import java.util.HashMap;
+
+
 public class ReviseReports {
-    /**
-     * monthlyReportsMaps - Итоговая таблица месячных отчетов;
-     * yearlyReportMap - Итоговая таблица годового отчета;
-     * monthlyReportMap - Форма таблицы месячных отчетов для сверки.
-     */
-    static void reviseSumReports(TreeMap<Integer, TreeMap<String, ArrayList<Double>>> monthlyReportsMaps, TreeMap<Integer, ArrayList<Double>> yearlyReportMap) {
-        /**
-         * Метод для Сверки отчётов
-         */
-        TreeMap<Integer, ArrayList<Double>> reviseSumMonthlyReport = new TreeMap<>();
+
+    static void reviseSumReports(HashMap<Integer, HashMap<String, ArrayList<Double>>> monthlyReportsMaps, HashMap<Integer, ArrayList<Double>> yearlyReportMap) {
+
+        HashMap<Integer, ArrayList<Double>> reviseSumMonthlyReport = new HashMap<>();
         int monthError;
 
         if ((monthlyReportsMaps.size() != 0) && (yearlyReportMap.size() != 0)) {
 
             for (Integer keyMonthlyReportsMaps : monthlyReportsMaps.keySet()) {
 
-                TreeMap<String, ArrayList<Double>> monthlyReportMap = monthlyReportsMaps.get(keyMonthlyReportsMaps);
+                HashMap<String, ArrayList<Double>> monthlyReportMap = monthlyReportsMaps.get(keyMonthlyReportsMaps);
                 double monthlySumsProfit = 0;
                 double monthlySumsExpenses = 0;
 
@@ -67,41 +60,39 @@ public class ReviseReports {
                 }
             }
         } else {
-            System.out.println("Перед Сверкой отчётов необходимо:\n" +
+            System.out.println("Перед тем, как сверять отчеты необходимо:\n" +
                     "1 - Считать все месячные отчёты;\n" +
                     "2 - Считать годовой отчёт.");
         }
     }
 
     public static String calendar(Integer month) {
-        /**
-         * Метод для замены номера месяца на его название
-         */
+
         String nameMonth = null;
         switch (month) {
-            case 1: nameMonth = "\"Январь\"";
+            case 1: nameMonth = "Январь";
                 break;
-            case 2: nameMonth = "\"Февраль\"";
+            case 2: nameMonth = "Февраль";
                 break;
-            case 3: nameMonth = "\"Март\"";
+            case 3: nameMonth = "Март";
                 break;
-            case 4: nameMonth = "\"Апрель\"";
+            case 4: nameMonth = "Апрель";
                 break;
-            case 5: nameMonth = "\"Май\"";
+            case 5: nameMonth = "Май";
                 break;
-            case 6: nameMonth = "\"Июнь\"";
+            case 6: nameMonth = "Июнь";
                 break;
-            case 7: nameMonth = "\"Июль\"";
+            case 7: nameMonth = "Июль";
                 break;
-            case 8: nameMonth = "\"Август\"";
+            case 8: nameMonth = "Август";
                 break;
-            case 9: nameMonth = "\"Сентябрь\"";
+            case 9: nameMonth = "Сентябрь";
                 break;
-            case 10: nameMonth = "\"Октябрь\"";
+            case 10: nameMonth = "Октябрь";
                 break;
-            case 11: nameMonth = "\"Ноябрь\"";
+            case 11: nameMonth = "Ноябрь";
                 break;
-            case 12: nameMonth = "\"Декабрь\"";
+            case 12: nameMonth = "Декабрь";
                 break;
         }
         return nameMonth;

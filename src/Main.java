@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-/**
- * «Автоматизация бухгалтерии»
- */
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,41 +12,23 @@ public class Main {
         while (true) {
             printMenu();
             int command = scanner.nextInt();
-
             if (command == 1) {
-                /**
-                 * Метод для Считывания всех месячных отчётов
-                 */
-                monthlyReport.readingMonthlyReports();
+                monthlyReport.readMonthlyReports();
             } else if (command == 2) {
-                /**
-                 * Метод для Считывания годового отчёта
-                 */
-                yearlyReport.readingYearlyReport();
+                yearlyReport.readFileContentsOrNull();
             } else if (command == 3) {
-                /**
-                 * Метод Сверки отчётов
-                 */
                 ReviseReports.reviseSumReports(monthlyReport.monthlyReportsMaps, yearlyReport.yearlyReportMap);
             } else if (command == 4) {
-                /**
-                 * Метод Вывода информации о всех месячных отчётах
-                 */
                 monthlyReport.outputInfoMonthlyReports();
             } else if (command == 5) {
-                /**
-                 * Метод Вывода информации о годовом отчёте
-                 */
                 yearlyReport.outputInfoYearlyReport();
             } else if (command == 0) {
-
                 System.out.println("Выход");
                 break;
             } else {
-                System.out.println("Извините, такой команды пока нет.");
+                System.out.println("Ошибка, такой команды нет.");
             }
         }
-        scanner.close();
     }
 
     public static void printMenu() {
