@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class MonthlyReport {
 
     HashMap<Integer, HashMap<String, ArrayList<Double>>> monthlyReportsMaps = new HashMap<>();
-    static String pathCatalogBy_Months = ("Reports/By Months");
+    static String pathCatalogBy_Months = ("resources");
     static String formatMonthlyReport = "m.\\d{6}.csv";
     static String patternFormatMonthlyReport = "m.YYYYMM.csv";
     File catalogByMonths;
