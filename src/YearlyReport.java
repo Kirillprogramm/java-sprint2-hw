@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class YearlyReport {
 
     HashMap<Integer, ArrayList<Double>> yearlyReportMap = new HashMap<>();
-    static String pathCatalogReports = ("Reports");
+    static String pathCatalogReports = ("resources");
     static String formatYearlyReport = "y.\\d{4}.csv";
     static String patternFormatYearlyReport = "y.YYYY.csv";
     static String nameFileYearlyReport;
@@ -27,7 +27,7 @@ public class YearlyReport {
 
                 nameFileYearlyReport = pathFileReport[0].getName();
                 numberYear = Integer.parseInt(nameFileYearlyReport.replaceFirst("y.", "")
-                        .replaceFirst(".csv", " "));
+                        .replaceFirst(".csv", ""));
                 BufferedReader readerYearlyReport = new BufferedReader(new FileReader(pathFileReport[0]));
                 String lineYearlyReport;
                 int count = 1;
